@@ -361,7 +361,7 @@ function _M.send_request( self, uri, opts )
         return nil, 'SocketConnectError', to_str('connect:', err_msg)
     end
 
-    if self.port == 443 or self.ssl == true then
+    if self.ssl == true then
         rpc_logging.reset_start(self.log)
 
         local session, err_msg = self.sock:sslhandshake(
